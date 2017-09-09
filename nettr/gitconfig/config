@@ -1,4 +1,8 @@
+[user]
+    email = alexander.kilesa@worldnettps.com
+    name = Alexander Kilesa
 [core]
+    editor = vim
 	repositoryformatversion = 0
 	filemode = true
 	bare = false
