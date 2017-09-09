@@ -78,8 +78,9 @@
     fetch = branches/VERSION_4_4_0_0_1:refs/remotes/VERSION_4_4_0_0_1
     fetch = branches/M_4_1_0_0_A:refs/remotes/M_4_1_0_0_A
     fetch = branches/VERSION_4_5_0_0:refs/remotes/VERSION_4_5_0_0
-    fetch = branches/R_4_2_0_0_A_LEVEL_II_DATA:refs/remotes/R_4_2_0_0_A_LEVEL_II_DATA
+    fetch = branches/R_4_2_0_0_A_LEVEL_II_DATA:refs/remotes/R_4_2_0_0_A_LEVEL_II_DATA    
     fetch = branches/M_4_4_0_0_A:refs/remotes/M_4_4_0_0_A
+    fetch = branches/VERSION_4_6_0_0:refs/remotes/VERSION_4_6_0_0
 
 # git checkout -b _4_1_0_1 remotes/VERSION_4_1_0_1
 # git checkout -b _4_1_0_2 remotes/VERSION_4_1_0_2
