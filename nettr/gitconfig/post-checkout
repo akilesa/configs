@@ -1,0 +1,32 @@
+#!/bin/bash
+#@1 - the ref of the previous HEAD
+#@2 - the ref of the new HEAD (which may or may not have changed)
+#@3 - flag indicating whether the checkout was a branch checkout (changing branches, flag=1) or a file checkout (retrieving a file from the index, flag=0)
+
+
+PROJECT_ROOT=/home/akilesa/data/projects/worldnet/ws
+PROJECT_BASE=$PROJECT_ROOT/nettraxion
+LOCALCONF_SRC_BASE=$PROJECT_ROOT/.unversioned/
+LOCALCONF_TARGET_BASE=$PROJECT_BASE/localconf
+
+    
+if [ "$3" = "1" ] && [ "$1" != "$2" ]; then
+    echo "---------------------------------------"
+    echo "Post-checkout hook: "
+    echo "arguments: $@"
+
+    PREV_BRANCH_NAME=`git name-rev --name-only $1`
+    CURR_BRANCH_NAME=`git name-rev --name-only $2`
+    echo $PREV_BRANCH_NAME
+    echo $CURR_BRANCH_NAME
+    
+    if [[ $CURR_BRANCH_NAME == remotes/* ]] ; then
+        echo "Nothing to do with env. conf while checking out branch '$CURR_BRANCH_NAME'"
+        exit 0
+    fi
+
+    rm $LOCALCONF_TARGET_BASE/worldnettps.properties
+    ln -s $LOCALCONF_SRC_BASE/$CURR_BRANCH_NAME.properties $LOCALCONF_TARGET_BASE/worldnettps.properties
+
+    echo "---------------------------------------"    
+fi
