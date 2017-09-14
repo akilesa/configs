@@ -6,7 +6,7 @@
 
 PROJECT_ROOT=/home/akilesa/data/projects/worldnet/ws
 PROJECT_BASE=$PROJECT_ROOT/nettraxion
-LOCALCONF_SRC_BASE=$PROJECT_ROOT/.unversioned
+LOCALCONF_SRC_BASE=$PROJECT_BASE/.unversioned
 LOCALCONF_TARGET_BASE=$PROJECT_BASE/localconf
 
     
