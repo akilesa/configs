@@ -65,3 +65,12 @@ EOF
 
 bash version-check.sh
 
+rm /bin/sh
+ln -s /bin/bash /bin/sh
+apt-get install bison
+apt-get install gawk
+apt-get install texinfo
+
+
+
+
