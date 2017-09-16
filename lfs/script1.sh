@@ -1,3 +1,8 @@
+
+# Edit the /etc/apt/sources.list and replace the line "deb http://archive.ubuntu.com/ubuntu xenial main 
+# restricted" with "deb http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse" and 
+# then do a "sudo apt-get update" followed by "sudo apt-get install texinfo".
+
 export LFS=/mnt/lfs
 
 echo $LFS
