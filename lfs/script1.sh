@@ -3,6 +3,8 @@
 # restricted" with "deb http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse" and 
 # then do a "sudo apt-get update" followed by "sudo apt-get install texinfo".
 
+apt-get update
+
 export LFS=/mnt/lfs
 
 echo $LFS
