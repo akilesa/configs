@@ -185,6 +185,18 @@ cd       build
 make
 make install
 
+cd $LFS/sources
+rm -Rf gcc-7.2.0
+
+tar -xf linux-4.12.7.tar.xz
+cd linux-4.12.7
+make mrproper
+make INSTALL_HDR_PATH=dest headers_install
+cp -rv dest/include/* /tools/include
+cd $LFS/sources
+rm -Rf linux-4.12.7
+
+
 
 
 
