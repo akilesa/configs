@@ -79,5 +79,7 @@ apt-get --yes install gawk
 apt-get --yes install texinfo
 
 
-
+mkdir -v $LFS/sources
+chmod -v a+wt $LFS/sources
+wget --input-file=packages_urls.txt --continue --directory-prefix=$LFS/sources
 
