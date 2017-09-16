@@ -1,3 +1,11 @@
+export LFS=/mnt/lfs
+
+echo $LFS
+
+/sbin/swapon -v /dev/sda2
+
+cd $LFS
+
 cat > version-check.sh << "EOF"
 #!/bin/bash
 # Simple script to list version numbers of critical development tools
