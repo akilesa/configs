@@ -315,7 +315,7 @@ cd $LFS/sources
 rm -Rf gcc-7.2.0
 
 tar -xf tcl-core8.6.7-src.tar.gz
-cd tcl-core8.6.7-src
+cd tcl8.6.7
 cd unix
 ./configure --prefix=/tools
 make
@@ -325,7 +325,7 @@ chmod -v u+w /tools/lib/libtcl8.6.so
 make install-private-headers
 ln -sv tclsh8.6 /tools/bin/tclsh
 cd $LFS/sources
-rm -Rf tcl-core8.6.7-src
+rm -Rf tcl8.6.7
 
 tar -xf expect5.45.tar.gz
 cd expect5.45
