@@ -382,4 +382,21 @@ ln -sv bash /tools/bin/sh
 cd $LFS/sources
 rm -Rf bash-4.4
 
+tar -xf bison-3.0.4.tar.xz
+cd bison-3.0.4
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf bison-3.0.4
+
+tar -xf bzip2-1.0.6.tar.gz
+cd bzip2-1.0.6
+make
+make PREFIX=/tools install
+cd $LFS/sources
+rm -Rf bzip2-1.0.6
+
+
 
