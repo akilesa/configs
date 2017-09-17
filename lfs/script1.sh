@@ -314,4 +314,60 @@ rm -v dummy.c a.out
 cd $LFS/sources
 rm -Rf gcc-7.2.0
 
+tar -xf tcl-core8.6.7-src.tar.gz
+cd tcl-core8.6.7-src
+cd unix
+./configure --prefix=/tools
+make
+TZ=UTC make test
+make install
+chmod -v u+w /tools/lib/libtcl8.6.so
+make install-private-headers
+ln -sv tclsh8.6 /tools/bin/tclsh
+cd $LFS/sources
+rm -Rf tcl-core8.6.7-src
+
+tar -xf expect5.45.tar.gz
+cd expect5.45
+cp -v configure{,.orig}
+sed 's:/usr/local/bin:/bin:' configure.orig > configure
+./configure --prefix=/tools       \
+            --with-tcl=/tools/lib \
+            --with-tclinclude=/tools/include
+make
+make test
+make SCRIPTS="" install
+cd $LFS/sources
+rm -Rf expect5.45
+
+tar -xf dejagnu-1.6.tar.gz
+cd dejagnu-1.6
+./configure --prefix=/tools
+make install
+make check
+cd $LFS/sources
+rm -Rf dejagnu-1.6
+
+tar -xf check-0.11.0.tar.gz
+cd check-0.11.0
+PKG_CONFIG= ./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf check-0.11.0
+
+tar -xf ncurses-6.0.tar.gz
+cd ncurses-6.0
+sed -i s/mawk// configure
+./configure --prefix=/tools \
+            --with-shared   \
+            --without-debug \
+            --without-ada   \
+            --enable-widec  \
+            --enable-overwrite
+make
+make install
+cd $LFS/sources
+rm -Rf ncurses-6.0
 
