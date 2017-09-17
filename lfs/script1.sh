@@ -398,5 +398,32 @@ make PREFIX=/tools install
 cd $LFS/sources
 rm -Rf bzip2-1.0.6
 
+tar -xf coreutils-8.27.tar.xz
+cd coreutils-8.27
+./configure --prefix=/tools --enable-install-program=hostname
+make
+make RUN_EXPENSIVE_TESTS=yes check
+make install
+cd $LFS/sources
+rm -Rf coreutils-8.27
+
+tar -xf diffutils-3.6.tar.xz
+cd diffutils-3.6
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf diffutils-3.6
+
+tar -xf file-5.31.tar.gz
+cd file-5.31
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf file-5.31
+
 
 
