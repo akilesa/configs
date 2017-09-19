@@ -483,4 +483,86 @@ make install
 cd $LFS/sources
 rm -Rf m4-1.4.18
 
+tar -xf make-4.2.1.tar.bz2
+cd make-4.2.1
+./configure --prefix=/tools --without-guile
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf make-4.2.1
+
+tar -xf patch-2.7.5.tar.xz
+cd patch-2.7.5
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf patch-2.7.5
+
+tar -xf perl-5.26.0.tar.xz
+cd perl-5.26.0
+sed -e '9751 a#ifndef PERL_IN_XSUB_RE' \
+    -e '9808 a#endif'                  \
+    -i regexec.c
+sh Configure -des -Dprefix=/tools -Dlibs=-lm
+make
+cp -v perl cpan/podlators/scripts/pod2man /tools/bin
+mkdir -pv /tools/lib/perl5/5.26.0
+cp -Rv lib/* /tools/lib/perl5/5.26.0
+cd $LFS/sources
+rm -Rf perl-5.26.0
+
+tar -xf sed-4.4.tar.xz
+cd sed-4.4
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf sed-4.4
+
+tar -xf tar-1.29.tar.xz
+cd tar-1.29
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf tar-1.29
+
+tar -xf texinfo-6.4.tar.xz
+cd texinfo-6.4
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf texinfo-6.4
+
+tar -xf util-linux-2.30.1.tar.xz
+cd util-linux-2.30.1
+./configure --prefix=/tools                \
+            --without-python               \
+            --disable-makeinstall-chown    \
+            --without-systemdsystemunitdir \
+            --without-ncurses              \
+            PKG_CONFIG=""
+make
+make install
+cd $LFS/sources
+rm -Rf util-linux-2.30.1
+
+tar -xf xz-5.2.3.tar.xz
+cd xz-5.2.3
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf xz-5.2.3
+
+
+
 
