@@ -425,5 +425,62 @@ make install
 cd $LFS/sources
 rm -Rf file-5.31
 
+tar -xf findutils-4.6.0.tar.gz
+cd findutils-4.6.0
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf findutils-4.6.0
+
+tar -xf gawk-4.1.4.tar.xz
+cd gawk-4.1.4
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf gawk-4.1.4
+
+tar -xf gettext-0.19.8.1.tar.xz
+cd gettext-0.19.8.1
+cd gettext-tools
+EMACS="no" ./configure --prefix=/tools --disable-shared
+make -C gnulib-lib
+make -C intl pluralx.c
+make -C src msgfmt
+make -C src msgmerge
+make -C src xgettext
+cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin
+cd $LFS/sources
+rm -Rf gettext-0.19.8.1
+
+tar -xf grep-3.1.tar.xz
+cd grep-3.1
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf grep-3.1
+
+tar -xf gzip-1.8.tar.xz
+cd gzip-1.8
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf gzip-1.8
+
+tar -xf m4-1.4.18.tar.xz
+cd m4-1.4.18
+./configure --prefix=/tools
+make
+make check
+make install
+cd $LFS/sources
+rm -Rf m4-1.4.18
 
 
