@@ -85,6 +85,8 @@
     fetch = branches/R_4_6_0_0_A_CIBC_POSH:refs/remotes/R_4_6_0_0_A_CIBC_POSH
     fetch = branches/R_4_6_0_0_B_HSBC_UK:refs/remotes/R_4_6_0_0_B_HSBC_UK    
     fetch = branches/R_4_6_0_0_B_PAY_U_LATAM:refs/remotes/R_4_6_0_0_B_PAY_U_LATAM
+    fetch = branches/VERSION_4_5_0_1:refs/remotes/VERSION_4_5_0_1
+    fetch = branches/VERSION_4_7_0_0:refs/remotes/VERSION_4_7_0_0  
 
 # git checkout -b _4_1_0_1 remotes/VERSION_4_1_0_1
 # git checkout -b _4_1_0_2 remotes/VERSION_4_1_0_2
