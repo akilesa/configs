@@ -1,4 +1,4 @@
-
+#/bin/sh
 # Edit the /etc/apt/sources.list and replace the line "deb http://archive.ubuntu.com/ubuntu xenial main 
 # restricted" with "deb http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse" and 
 # then do a "sudo apt-get update" followed by "sudo apt-get install texinfo".
@@ -563,6 +563,19 @@ make install
 cd $LFS/sources
 rm -Rf xz-5.2.3
 
+chown -R root:root $LFS/tools
+mkdir -pv $LFS/{dev,proc,sys,run}
+mknod -m 600 $LFS/dev/console c 5 1
+mknod -m 666 $LFS/dev/null c 1 3
+mount -v --bind /dev $LFS/dev
 
+mount -vt devpts devpts $LFS/dev/pts -o gid=5,mode=620
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+
+if [ -h $LFS/dev/shm ]; then
+    mkdir -pv $LFS/$(readlink $LFS/dev/shm)
+fi
 
 
