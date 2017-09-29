@@ -92,6 +92,9 @@
     fetch = branches/VERSION_4_5_0_1:refs/remotes/VERSION_4_5_0_1
     fetch = branches/VERSION_4_7_0_0:refs/remotes/VERSION_4_7_0_0
     fetch = branches/VERSION_4_5_0_2:refs/remotes/VERSION_4_5_0_2
+    fetch = branches/VERSION_4_5_0_2:refs/remotes/VERSION_4_5_0_3
+    fetch = branches/VERSION_4_5_0_2:refs/remotes/R_4_4_0_0_I_HSBC_IRIS
+    fetch = branches/VERSION_4_5_0_2:refs/remotes/R_4_4_0_0_I_EXIGO
 
 # git checkout -b _4_1_0_1 remotes/VERSION_4_1_0_1
 # git checkout -b _4_1_0_2 remotes/VERSION_4_1_0_2
