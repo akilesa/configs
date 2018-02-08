@@ -12,7 +12,11 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'lifepillar/vim-solarized8'
+
 call plug#end()
 
 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
+
+colorscheme solarized8_dark
