@@ -164,4 +164,4 @@ exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:caps_t
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
 bindsym $mod+shift+x exec i3lock
-
+bindsym $mod+m move workspace to output left
