@@ -87,3 +87,4 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias ls="ls -hl --group-directories-first --color=auto"
 alias rm="rm -i"
+alias emx="emacs -nw"
