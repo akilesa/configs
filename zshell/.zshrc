@@ -88,3 +88,4 @@ source $ZSH/oh-my-zsh.sh
 alias ls="ls -hl --group-directories-first --color=auto"
 alias rm="rm -i"
 alias emx="emacs -nw"
+alias -s pdf=evince
