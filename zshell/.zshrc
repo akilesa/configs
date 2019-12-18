@@ -85,6 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U compinit
+compinit
+
 alias ls="ls -hl --group-directories-first --color=auto"
 alias rm="rm -i"
 alias emx="emacs -nw"
