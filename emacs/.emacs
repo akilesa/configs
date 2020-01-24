@@ -27,7 +27,9 @@
       (levels . "SLF4J")
       (timestamp)
       (aliases)))))
- '(package-selected-packages (quote (yaml-mode json-mode material-theme logview)))
+ '(package-selected-packages
+   (quote
+    (doom-modeline indent-guide doom-themes yaml-mode json-mode material-theme logview)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -61,3 +63,32 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+
+(require 'all-the-icons)
+
+;; Doom theme
+
+(require 'doom-themes)
+
+(require 'indent-guide)
+(indent-guide-global-mode)
+(set-face-background 'indent-guide-face "dimgray")
+
+;; Global settings (defaults)
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
+;; theme may have their own settings.
+(load-theme 'doom-molokai t)
+
+;; Enable flashing mode-line on errors
+(doom-themes-visual-bell-config)
+
+;; Enable custom neotree theme
+(doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+;; -----------------------------------------------------
