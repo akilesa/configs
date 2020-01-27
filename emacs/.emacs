@@ -91,6 +91,8 @@
 (require 'doom-modeline)
 (doom-modeline-mode 1)
 
+(require 'evil)
+
 ;; -----------------------------------------------------
 
 ;; Help package
@@ -110,3 +112,16 @@
 (define-key evil-ex-map "f" 'helm-projectile-find-file)
 
 ;; -----------------------------------------------------
+
+;; MySQL client
+
+(setq sql-mysql-login-params
+      '((user :default "root")      
+        (server :default "localhost")))
+
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
+
+;; ----------------------------------------------------
+
